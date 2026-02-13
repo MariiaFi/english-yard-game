@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Двор-словарь | Учим английский</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Верхняя панель навигации -->
+    <header>
+        <div class="header-left">
+            <h1 class="logo">🌳 YardWords</h1>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle" class="icon-btn" aria-label="Переключить тему">🌙</button>
+        </div>
+    </header>
+
+    <!-- Основной контейнер приложения -->
+    <main id="app">
+        <!-- Секция Словаря (отображается по умолчанию) -->
+        <section id="dictionary-section" class="section active">
+            <div class="dictionary-header">
+                <h2>Словарь: Во дворе / На улице</h2>
+                <div class="dictionary-controls">
+                    <input type="text" id="search-input" placeholder="Поиск (рус / англ)...">
+                    <div class="btn-group">
+                        <button id="sort-az" class="secondary-btn">A–Z</button>
+                        <button id="sort-random" class="secondary-btn">Случайно</button>
+                        <button id="go-to-quiz" class="primary-btn">Квиз</button>
+                    </div>
+                </div>
+            </div>
+            <div id="cards-container" class="cards-grid">
+                <!-- Словарь будет отрисован здесь через JS -->
+            </div>
+        </section>
+
+        <!-- Секция Квиза (скрыта изначально) -->
+        <section id="quiz-section" class="section">
+            <div class="quiz-header">
+                <h2 id="quiz-mode-title">Квиз: Русский → Английский</h2>
+                <div class="quiz-stats">
+                    <div id="score-display" class="score">Счёт: 0 / 0</div>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Зона вопроса -->
+            <div id="quiz-area" class="quiz-area">
+                <div id="question-card" class="question-card">
+                    <div id="question-word" class="question-word">слово</div>
+                    <div id="question-translation" class="question-translation">перевод</div>
+                </div>
+                <div id="options-container" class="options-grid">
+                    <!-- Кнопки вариантов -->
+                </div>
+                <div class="quiz-footer">
+                    <button id="next-btn" class="primary-btn" disabled>Дальше</button>
+                </div>
+            </div>
+
+            <!-- Экран результата -->
+            <div id="result-screen" class="result-screen hidden">
+                <h3>Результат</h3>
+                <p id="result-message">Вы ответили правильно на X из Y</p>
+                <div class="result-buttons">
+                    <button id="retry-mistakes-btn" class="secondary-btn">Повторить ошибочные</button>
+                    <button id="play-again-btn" class="primary-btn">Сыграть снова</button>
+                    <button id="back-to-dict-from-result" class="text-btn">Вернуться в словарь</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
